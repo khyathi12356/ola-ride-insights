@@ -46,6 +46,9 @@ else:
     )
     st.plotly_chart(fig1, width='stretch')
 
+st.markdown("### 📊 Insight")
+st.write("The biggest issue is “driver not moving toward pickup,” followed by “driver asked to cancel,” showing strong driver-related friction before rides even start.")
+st.write("Secondary reasons like plan changes, AC issues, and wrong address are much lower, indicating operational reliability matters more than user-side factors.")
 
 # DRIVER REASONS 
 driver_reason = driver["Canceled_Rides_by_Driver"].dropna()
@@ -71,3 +74,7 @@ else:
         title="Driver Cancellation Reasons"
     )
     st.plotly_chart(fig2, width='stretch')
+
+st.markdown("### 📊 Insight")
+st.write("Most cancellations come from personal/car-related issues and customer-related problems, suggesting driver readiness and rider behavior both drive drop-offs.")
+st.write("Health concerns (customer coughing) and overcrowding also contribute notably, highlighting safety and policy enforcement as key factors.")

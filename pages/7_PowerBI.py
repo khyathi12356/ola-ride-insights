@@ -10,8 +10,8 @@ This section presents the Power BI dashboards created for business insights.
 Since Power BI service embedding is not available, dashboards are shown as exported visuals.
 """)
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs([
-    "Overall", "Vehicle", "Revenue", "Cancellation", "Ratings"
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+    "Overall", "Vehicle", "Revenue", "Cancellation", "Ratings", "Business Insights and Recommendations"
 ])
 
 with tab1:
@@ -28,5 +28,8 @@ with tab4:
 
 with tab5:
     st.image("assets/ratings.png", use_container_width=True)
+
+with tab6:
+    st.image("assets/business insights and recommendations.png", use_container_width=True)
 
 st.info("📌 Note: Interactive charts are available in other pages of this app.")
