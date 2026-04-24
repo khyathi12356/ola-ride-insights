@@ -1,41 +1,13 @@
 import streamlit as st
-import pandas as pd
+from utils.db import create_database
 
-st.set_page_config(page_title="OLA Analytics", layout="wide")
+st.set_page_config(page_title="OLA Dashboard", layout="wide")
 
-df = pd.read_csv("cleaned_ola_data.csv")
+st.title("🚖 OLA Ride Insights Dashboard")
 
-st.title("🚖 OLA Ride Analytics Dashboard")
+st.sidebar.success("Navigate pages from left menu")
 
-# -------------------------
-# GLOBAL FILTERS (SLICERS)
-# -------------------------
-st.sidebar.header("🎛 Filters")
-
-vehicle = st.sidebar.multiselect(
-    "Vehicle Type",
-    df["Vehicle_Type"].unique(),
-    default=df["Vehicle_Type"].unique()
-)
-
-payment = st.sidebar.multiselect(
-    "Payment Method",
-    df["Payment_Method"].unique(),
-    default=df["Payment_Method"].unique()
-)
-
-status = st.sidebar.multiselect(
-    "Booking Status",
-    df["Booking_Status"].unique(),
-    default=df["Booking_Status"].unique()
-)
-
-df_filtered = df[
-    (df["Vehicle_Type"].isin(vehicle)) &
-    (df["Payment_Method"].isin(payment)) &
-    (df["Booking_Status"].isin(status))
-]
-
-st.session_state["df"] = df_filtered
-
-st.success("Filters applied globally ✔ Navigate pages from sidebar")
+# RUN ONLY ONCE (safe)
+if st.button("🔄 Reset Database"):
+    create_database()
+    st.success("Database rebuilt successfully!")

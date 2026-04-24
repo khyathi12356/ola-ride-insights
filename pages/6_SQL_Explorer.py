@@ -7,7 +7,6 @@ st.title("🧠 SQL Explorer - Ola Ride Analytics")
 
 st.info("📌 Use table name: rides")
 
-# ---------------- PREDEFINED QUERIES (FULL 10) ----------------
 QUERIES = {
 
 "1. Successful Bookings":
@@ -94,7 +93,6 @@ AND Incomplete_Rides_Reason <> 'Not Applicable'
 """
 }
 
-# ---------------- SELECT QUERY ----------------
 choice = st.selectbox("📌 Choose Predefined Query", list(QUERIES.keys()))
 
 if st.button("▶ Run Predefined Query"):
@@ -105,7 +103,7 @@ if st.button("▶ Run Predefined Query"):
 
 st.divider()
 
-# ---------------- CUSTOM QUERY ----------------
+
 st.subheader("✍ Custom SQL Query")
 
 query = st.text_area("Write SQL Query")
