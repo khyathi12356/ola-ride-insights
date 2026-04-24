@@ -48,7 +48,7 @@ st.session_state.booking_status = st.sidebar.multiselect(
 # Payment Method (MULTISELECT)
 st.session_state.payment_method = st.sidebar.multiselect(
     "Payment Method",
-    ["Unknown", "Cash", "UPI", "Credit Card", "Debit Card"],
+    ["unknown", "cash", "upi", "credit card", "debit card"],
     default=st.session_state.payment_method
 )
 
