@@ -7,7 +7,13 @@ st.title("🚖 OLA Ride Insights Dashboard")
 
 st.sidebar.success("Navigate pages from left menu")
 
-# RUN ONLY ONCE (safe)
-if st.button("🔄 Reset Database"):
-    create_database()
-    st.success("Database rebuilt successfully!")
+st.markdown("""
+### 📊 Welcome to the OLA Ride Insights Dashboard
+This dashboard provides insights into ride trends, cancellations, revenue, and customer behavior.
+""")
+
+# Developer-only section (hidden from normal users)
+if st.sidebar.checkbox("🔧 Developer Mode"):
+    if st.button("🔄 Reset Database"):
+        create_database()
+        st.success("Database rebuilt successfully!")
